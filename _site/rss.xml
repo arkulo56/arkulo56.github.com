@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
-        <title>平静的技术</title>
-        <description>平静的技术 - 抽汗烟的笨笨</description>
+        <title>平静的技术@github</title>
+        <description>平静的技术@github - 抽汗烟的笨笨</description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-02-13T23:45:15+08:00</lastBuildDate>
-        <pubDate>2014-02-13T23:45:15+08:00</pubDate>
+        <lastBuildDate>2014-02-14T00:56:47+08:00</lastBuildDate>
+        <pubDate>2014-02-14T00:56:47+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -20,7 +20,7 @@
 
 &lt;li&gt;jekyll可以把markdown翻译成html文档，这下你明白了吧&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;问：那代码高亮功能在哪里？&lt;/p&gt;&lt;p&gt;答：markdown写文章的时候做特殊标记，jekyll翻译的时候做相应处理，所以就是一个jekyll插件喽～&lt;/p&gt;</description>
+&lt;p&gt;问：那代码高亮功能在哪里？&lt;/p&gt;&lt;p&gt;答：markdown写文章的时候做特殊标记，jekyll翻译的时候做相应处理，所以就是一个jekyll插件喽～&lt;/p&gt;&lt;p&gt;问：为什么别人的博客页面很好看？&lt;/p&gt;&lt;p&gt;答：你可以自己做漂亮的页面，别说你不会啊！也可以直接clone现成的，本博客用的就是[jekyllbootstrap](http://jekyllbootstrap.com/usage/jekyll-quick-start.html),他的快速指南还是不错的！&lt;/p&gt;</description>
                 <link>http://username.github.io/2014/02/13/jekyllmarkdown</link>
                 <guid>http://username.github.io/2014/02/13/jekyllmarkdown</guid>
                 <pubDate>2014-02-13T00:00:00+08:00</pubDate>
@@ -30,7 +30,14 @@
                 <title>搬来搬去终于来到这里</title>
                 <description>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早之前的博客*平静的技术*本来是托管在国外的VPS上的，但是访问速度一直也不是很稳定，必定是离中国太远了。后来索性停了博客，换用一些云笔记类的产品。用久了又觉得分享起来不是很方便，没有了开源精神。好吧，早知道github的pages,那把原来的域名转过来，直接做一个静态博客也是不错的！！&lt;/p&gt;&lt;p&gt;前两天在网上看到一句话&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;现在是写博客的人原来越少了，转载博客的人却越来越多了&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;深深的同意此说法！不过希望自己还是能记录下些东西，毕竟一直是个愿意写点东西的性格！！&lt;/p&gt;</description>
+&lt;p&gt;深深的同意此说法！不过希望自己还是能记录下些东西，毕竟一直是个愿意写点东西的性格！！&lt;/p&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='php'&gt;&lt;span class='cp'&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class='k'&gt;function&lt;/span&gt; &lt;span class='nf'&gt;aaa&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+&lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='nv'&gt;$a&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;fdfdf&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='k'&gt;echo&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;I like this work!&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='cp'&gt;?&amp;gt;&lt;/span&gt;&lt;span class='x' /&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
                 <link>http://username.github.io/2014/02/13/hello-world</link>
                 <guid>http://username.github.io/2014/02/13/hello-world</guid>
                 <pubDate>2014-02-13T00:00:00+08:00</pubDate>
