@@ -1,7 +1,7 @@
 ---
 layout: page
 title: arkulo 's technology
-tagline: don't stop
+tagline: arkulo@163.com
 ---
 {% include JB/setup %}
 
