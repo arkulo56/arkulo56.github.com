@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>平静的技术</title>
+ <link href="http://username.github.io/" rel="self"/>
+ <link href="http://username.github.io"/>
+ <updated>2014-02-13T22:49:13+08:00</updated>
+ <id>http://username.github.io</id>
+ <author>
+   <name>抽汗烟的笨笨</name>
+   <email>arkulo@163.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>Hello World</title>
+   <link href="http://username.github.io/2014/02/13/hello-world"/>
+   <updated>2014-02-13T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/02/13/hello-world</id>
+   <content type="html"></content>
+ </entry>
+ 
+ 
+</feed>

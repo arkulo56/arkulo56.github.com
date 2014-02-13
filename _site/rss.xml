@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+        <title>平静的技术</title>
+        <description>平静的技术 - 抽汗烟的笨笨</description>
+        <link>http://username.github.io</link>
+        <link>http://username.github.io</link>
+        <lastBuildDate>2014-02-13T22:49:13+08:00</lastBuildDate>
+        <pubDate>2014-02-13T22:49:13+08:00</pubDate>
+        <ttl>1800</ttl>
+
+
+        <item>
+                <title>Hello World</title>
+                <description></description>
+                <link>http://username.github.io/2014/02/13/hello-world</link>
+                <guid>http://username.github.io/2014/02/13/hello-world</guid>
+                <pubDate>2014-02-13T00:00:00+08:00</pubDate>
+        </item>
+
+
+</channel>
+</rss>
