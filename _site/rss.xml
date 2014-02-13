@@ -5,14 +5,32 @@
         <description>平静的技术 - 抽汗烟的笨笨</description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-02-13T22:49:13+08:00</lastBuildDate>
-        <pubDate>2014-02-13T22:49:13+08:00</pubDate>
+        <lastBuildDate>2014-02-13T23:45:15+08:00</lastBuildDate>
+        <pubDate>2014-02-13T23:45:15+08:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
-                <title>Hello World</title>
-                <description></description>
+                <title>jekyll+markdown通俗易懂</title>
+                <description>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;原来没接触过jekyll和markdown,网络上很多文章写的都不怎么接地气，那我就科普一下知识吧，不对无喷啊！！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在github上写博客，一定要用jekyll吗？不用，你自己如果手写html代码，那就不用，直接看这篇&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&quot;&gt;文章&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;当然了如果你要是觉得每次写博客还得写代码很累，那你可以试试markdown，一种写文章的方法，这个能代替html吗？不能，他就是一篇特殊点的文章，来一篇简单点的&lt;a href=&quot;http://jianshu.io/p/q81RER&quot;&gt;教程&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;jekyll可以把markdown翻译成html文档，这下你明白了吧&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;问：那代码高亮功能在哪里？&lt;/p&gt;&lt;p&gt;答：markdown写文章的时候做特殊标记，jekyll翻译的时候做相应处理，所以就是一个jekyll插件喽～&lt;/p&gt;</description>
+                <link>http://username.github.io/2014/02/13/jekyllmarkdown</link>
+                <guid>http://username.github.io/2014/02/13/jekyllmarkdown</guid>
+                <pubDate>2014-02-13T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>搬来搬去终于来到这里</title>
+                <description>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早之前的博客*平静的技术*本来是托管在国外的VPS上的，但是访问速度一直也不是很稳定，必定是离中国太远了。后来索性停了博客，换用一些云笔记类的产品。用久了又觉得分享起来不是很方便，没有了开源精神。好吧，早知道github的pages,那把原来的域名转过来，直接做一个静态博客也是不错的！！&lt;/p&gt;&lt;p&gt;前两天在网上看到一句话&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;现在是写博客的人原来越少了，转载博客的人却越来越多了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;深深的同意此说法！不过希望自己还是能记录下些东西，毕竟一直是个愿意写点东西的性格！！&lt;/p&gt;</description>
                 <link>http://username.github.io/2014/02/13/hello-world</link>
                 <guid>http://username.github.io/2014/02/13/hello-world</guid>
                 <pubDate>2014-02-13T00:00:00+08:00</pubDate>

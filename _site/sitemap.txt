@@ -10,4 +10,5 @@ http://username.github.io/index.html
 http://username.github.io/about.html
 http://username.github.io/sitemap.txt
 
+http://username.github.io/2014/02/13/jekyllmarkdown
 http://username.github.io/2014/02/13/hello-world
