@@ -15,3 +15,6 @@ tags: []
 
 <p>问：那代码高亮功能在哪里？</p>
 <p>答：markdown写文章的时候做特殊标记，jekyll翻译的时候做相应处理，所以就是一个jekyll插件喽～</p>
+
+<P>问：为什么别人的博客页面很好看？</p>
+<p>答：你可以自己做漂亮的页面，别说你不会啊！也可以直接clone现成的，本博客用的就是[jekyllbootstrap](http://jekyllbootstrap.com/usage/jekyll-quick-start.html),他的快速指南还是不错的！</p>
