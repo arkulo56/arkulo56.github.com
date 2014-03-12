@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>djangotinymce</title>
+    <title>django pagination实践+总结</title>
     <meta name="description" content="">
     <meta name="author" content="抽汗烟的笨笨">
 
@@ -115,7 +115,7 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>djangotinymce </h1>
+  <h1>django pagination实践+总结 </h1>
 </div>
 
 <div class="row-fluid post-full">
@@ -124,39 +124,56 @@
       <span>12 March 2014</span>
     </div>
     <div class="content">
-      <h1 id="djangotinymce">django+tinymce</h1>
+      <p>简单记录一下django分页的用法，django自带分页功能pagination，不过用起来稍微有点小复杂，所以个人建议用django-pagination扩展，还是很方便的！<br /> 其<a href="https://pypi.python.org/pypi/django-pagination">官方</a>有一个很清晰的使用例子，以下简单的记录以下：<br /></p>
 
-<p>给django加一个在线编辑器，暂时先用tinymce来做，因为着急要用一下，所以没花太多时间去看configration,以下就是简单的介绍一下吧！ <br /> &emsp;&emsp;在tinymce<a href="http://www.tinymce.com/index.php">官网</a>下载对应的zip，然后解压。我在django中设置了一个静态文静目录static，然后该目录下建立一个js目录，然后把解压缩的代码扔进去，代码目录是这样</p>
+<ol>
+<li>将源文件下载后，解压，然后在目录中python setup.py install,然后将解压目录中的pagination目录拷贝到项目根目录下</li>
 
-<blockquote>
-<p><em>mysite/static/js/tinymce</em></p>
-</blockquote>
-
-<p>关于静态目录设定，是这样的 <br /></p>
-<div class='highlight'><pre><code class='python'><span class='n'>STATIC_URL</span> <span class='o'>=</span> <span class='s'>&#39;/static/&#39;</span>
-<span class='n'>STATICFILES_DIRS</span> <span class='o'>=</span> <span class='p'>(</span>
-    <span class='n'>os</span><span class='o'>.</span><span class='n'>path</span><span class='o'>.</span><span class='n'>join</span><span class='p'>(</span><span class='n'>BASE_DIR</span><span class='p'>,</span> <span class='s'>&quot;static&quot;</span><span class='p'>),</span>       
+<li>修改项目setting.py文件，需要添加或修改的内容如下</li>
+</ol>
+<div class='highlight'><pre><code class='python'><span class='n'>INSTALLED_APPS</span> <span class='o'>=</span> <span class='p'>(</span>
+	<span class='s'>&#39;pagination&#39;</span><span class='p'>,</span>
+<span class='p'>)</span>
+<span class='n'>MIDDLEWARE_CLASSES</span> <span class='o'>=</span> <span class='p'>(</span>
+	<span class='s'>&#39;pagination.middleware.PaginationMiddleware&#39;</span><span class='p'>,</span>
+<span class='p'>)</span>
+<span class='n'>TEMPLATE_CONTEXT_PROCESSORS</span> <span class='o'>=</span> <span class='p'>(</span>
+    <span class='s'>&quot;django.contrib.auth.context_processors.auth&quot;</span><span class='p'>,</span> 
+    <span class='s'>&quot;django.core.context_processors.debug&quot;</span><span class='p'>,</span> 
+    <span class='s'>&quot;django.core.context_processors.i18n&quot;</span><span class='p'>,</span>
+    <span class='s'>&quot;django.core.context_processors.media&quot;</span><span class='p'>,</span>
+    <span class='s'>&quot;django.core.context_processors.request&quot;</span>
 <span class='p'>)</span>
 </code></pre></div>
-<p>然后在模板文件里面引用tinymce就可以</p>
-<div class='highlight'><pre><code class='javascript'><span class='o'>&lt;</span><span class='nx'>script</span> <span class='nx'>type</span><span class='o'>=</span><span class='s2'>&quot;text/javascript&quot;</span> <span class='nx'>src</span><span class='o'>=</span><span class='s2'>&quot;js/tinymce/tinymce.min.js&quot;</span><span class='o'>&gt;&lt;</span><span class='err'>/script&gt;</span>
-<span class='o'>&lt;</span><span class='nx'>script</span> <span class='nx'>type</span><span class='o'>=</span><span class='s2'>&quot;text/javascript&quot;</span><span class='o'>&gt;</span>
-<span class='nx'>tinyMCE</span><span class='p'>.</span><span class='nx'>init</span><span class='p'>({</span>
-    <span class='nx'>mode</span> <span class='o'>:</span> <span class='s2'>&quot;textareas&quot;</span><span class='p'>,</span>
-    <span class='nx'>theme</span> <span class='o'>:</span> <span class='s2'>&quot;modern&quot;</span><span class='p'>,</span>
-    <span class='nx'>width</span><span class='o'>:</span> <span class='s1'>&#39;780px&#39;</span><span class='p'>,</span>
-    <span class='nx'>language</span><span class='o'>:</span> <span class='s1'>&#39;zh_cn&#39;</span><span class='p'>,</span>
-    <span class='nx'>menubar</span><span class='o'>:</span> <span class='kc'>false</span><span class='p'>,</span>
-    <span class='nx'>plugins</span><span class='o'>:</span> <span class='p'>[</span>
-    <span class='s2'>&quot;advlist autolink autosave link image lists charmap print preview hr anchor pagebreak&quot;</span><span class='p'>,</span>
-    <span class='s2'>&quot;contextmenu directionality emoticons template textcolor paste fullpage textcolor&quot;</span>
-    <span class='p'>],</span>
-    <span class='nx'>toolbar_items_size</span><span class='o'>:</span> <span class='s1'>&#39;small&#39;</span><span class='p'>,</span>
-    <span class='nx'>toolbar1</span><span class='o'>:</span> <span class='s2'>&quot;undo redo | bold italic underline strikethrough forecolor | alignleft aligncenter alignright | bullist blockquote link unlink code preview&quot;</span><span class='p'>,</span>
-<span class='p'>});</span>
-<span class='o'>&lt;</span><span class='err'>/script&gt;</span>
-</code></pre></div>
-<p>这样就把tinymce引入进来了，然后在html代码里编写的textarea就会自动转换成tinymce。</p>
+<ol>
+<li>模板中添加如下内容（以下内容中，请把$$换成%，因为{和%凑在一起和markdown语法冲突）</li>
+</ol>
+
+<ul>
+<li>模板顶部添加<br /> {$ load pagination_tags $}；</li>
+
+<li>处理需要循环的数据变量<br /> {$ autopaginate 变量名称 $} or {$ autopaginate 变量名称 10 $}<br /> <br />注：这里的10代表每页显示条目,这句写好后，后面就可以开始循环输出变量了<br /></li>
+
+<li>显示分页页码<br /> {$ paginate $} 注：如果页数小于2的话，这个不会显示</li>
+</ul>
+
+<ol>
+<li>其他的选项，可以在setting.py的配置最后一想中设置</li>
+</ol>
+
+<blockquote>
+<p>PAGINATION_DEFAULT_PAGINATION 每页显示数量</p>
+
+<p>PAGINATION_DEFAULT_WINDOW 分页显示在当前页左右两边的页数</p>
+
+<p>PAGINATION_DEFAULT_ORPHANS 最后一页显示的最小页数，默认为0</p>
+
+<p>PAGINATION_INVALID_PAGE_RAISES_404 当页数不存在时，是否显示404页面</p>
+</blockquote>
+
+<p><br /></p>
+
+<p>至此，简单的分页就做完了。</p>
     </div>
 
     
@@ -167,11 +184,11 @@
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2014/03/12/django-pagination" title="django pagination实践+总结">&larr; Previous</a></li>
+        <li class="prev"><a href="/2014/02/13/jekyllmarkdown" title="jekyll+markdown通俗易懂">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next disabled"><a>Next &rarr;</a>
+        <li class="next"><a href="/2014/03/12/djangotinymce" title="djangotinymce">Next &rarr;</a></li>
       
       </ul>
     </div>

@@ -5,8 +5,8 @@
         <description>平静的技术@github - 抽汗烟的笨笨</description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-03-12T16:38:12+08:00</lastBuildDate>
-        <pubDate>2014-03-12T16:38:12+08:00</pubDate>
+        <lastBuildDate>2014-03-12T22:15:12+08:00</lastBuildDate>
+        <pubDate>2014-03-12T22:15:12+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -47,6 +47,63 @@
 &lt;p&gt;这样就把tinymce引入进来了，然后在html代码里编写的textarea就会自动转换成tinymce。&lt;/p&gt;</description>
                 <link>http://username.github.io/2014/03/12/djangotinymce</link>
                 <guid>http://username.github.io/2014/03/12/djangotinymce</guid>
+                <pubDate>2014-03-12T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>django pagination实践+总结</title>
+                <description>&lt;p&gt;简单记录一下django分页的用法，django自带分页功能pagination，不过用起来稍微有点小复杂，所以个人建议用django-pagination扩展，还是很方便的！&lt;br /&gt; 其&lt;a href=&quot;https://pypi.python.org/pypi/django-pagination&quot;&gt;官方&lt;/a&gt;有一个很清晰的使用例子，以下简单的记录以下：&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;将源文件下载后，解压，然后在目录中python setup.py install,然后将解压目录中的pagination目录拷贝到项目根目录下&lt;/li&gt;
+
+&lt;li&gt;修改项目setting.py文件，需要添加或修改的内容如下&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='n'&gt;INSTALLED_APPS&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;
+	&lt;span class='s'&gt;&amp;#39;pagination&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;span class='n'&gt;MIDDLEWARE_CLASSES&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;
+	&lt;span class='s'&gt;&amp;#39;pagination.middleware.PaginationMiddleware&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;span class='n'&gt;TEMPLATE_CONTEXT_PROCESSORS&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;
+    &lt;span class='s'&gt;&amp;quot;django.contrib.auth.context_processors.auth&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; 
+    &lt;span class='s'&gt;&amp;quot;django.core.context_processors.debug&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; 
+    &lt;span class='s'&gt;&amp;quot;django.core.context_processors.i18n&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+    &lt;span class='s'&gt;&amp;quot;django.core.context_processors.media&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+    &lt;span class='s'&gt;&amp;quot;django.core.context_processors.request&amp;quot;&lt;/span&gt;
+&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;模板中添加如下内容（以下内容中，请把$$换成%，因为{和%凑在一起和markdown语法冲突）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;模板顶部添加&lt;br /&gt; {$ load pagination_tags $}；&lt;/li&gt;
+
+&lt;li&gt;处理需要循环的数据变量&lt;br /&gt; {$ autopaginate 变量名称 $} or {$ autopaginate 变量名称 10 $}&lt;br /&gt; &lt;br /&gt;注：这里的10代表每页显示条目,这句写好后，后面就可以开始循环输出变量了&lt;br /&gt;&lt;/li&gt;
+
+&lt;li&gt;显示分页页码&lt;br /&gt; {$ paginate $} 注：如果页数小于2的话，这个不会显示&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;其他的选项，可以在setting.py的配置最后一想中设置&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;PAGINATION_DEFAULT_PAGINATION 每页显示数量&lt;/p&gt;
+
+&lt;p&gt;PAGINATION_DEFAULT_WINDOW 分页显示在当前页左右两边的页数&lt;/p&gt;
+
+&lt;p&gt;PAGINATION_DEFAULT_ORPHANS 最后一页显示的最小页数，默认为0&lt;/p&gt;
+
+&lt;p&gt;PAGINATION_INVALID_PAGE_RAISES_404 当页数不存在时，是否显示404页面&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;至此，简单的分页就做完了。&lt;/p&gt;</description>
+                <link>http://username.github.io/2014/03/12/django-pagination</link>
+                <guid>http://username.github.io/2014/03/12/django-pagination</guid>
                 <pubDate>2014-03-12T00:00:00+08:00</pubDate>
         </item>
 
