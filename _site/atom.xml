@@ -4,13 +4,53 @@
  <title>平静的技术@github</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2014-02-14T00:56:47+08:00</updated>
+ <updated>2014-03-12T16:38:12+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name>抽汗烟的笨笨</name>
    <email>arkulo@163.com</email>
  </author>
 
+ 
+ <entry>
+   <title>djangotinymce</title>
+   <link href="http://username.github.io/2014/03/12/djangotinymce"/>
+   <updated>2014-03-12T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/03/12/djangotinymce</id>
+   <content type="html">&lt;h1 id=&quot;djangotinymce&quot;&gt;django+tinymce&lt;/h1&gt;
+
+&lt;p&gt;给django加一个在线编辑器，暂时先用tinymce来做，因为着急要用一下，所以没花太多时间去看configration,以下就是简单的介绍一下吧！ &lt;br /&gt; &amp;emsp;&amp;emsp;在tinymce&lt;a href=&quot;http://www.tinymce.com/index.php&quot;&gt;官网&lt;/a&gt;下载对应的zip，然后解压。我在django中设置了一个静态文静目录static，然后该目录下建立一个js目录，然后把解压缩的代码扔进去，代码目录是这样&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;mysite/static/js/tinymce&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;关于静态目录设定，是这样的 &lt;br /&gt;&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='python'&gt;&lt;span class='n'&gt;STATIC_URL&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;/static/&amp;#39;&lt;/span&gt;
+&lt;span class='n'&gt;STATICFILES_DIRS&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;
+    &lt;span class='n'&gt;os&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;path&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;join&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;BASE_DIR&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s'&gt;&amp;quot;static&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;       
+&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;然后在模板文件里面引用tinymce就可以&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='o'&gt;&amp;lt;&lt;/span&gt;&lt;span class='nx'&gt;script&lt;/span&gt; &lt;span class='nx'&gt;type&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class='nx'&gt;src&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;js/tinymce/tinymce.min.js&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class='err'&gt;/script&amp;gt;&lt;/span&gt;
+&lt;span class='o'&gt;&amp;lt;&lt;/span&gt;&lt;span class='nx'&gt;script&lt;/span&gt; &lt;span class='nx'&gt;type&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;&amp;gt;&lt;/span&gt;
+&lt;span class='nx'&gt;tinyMCE&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;init&lt;/span&gt;&lt;span class='p'&gt;({&lt;/span&gt;
+    &lt;span class='nx'&gt;mode&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;textareas&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+    &lt;span class='nx'&gt;theme&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;modern&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+    &lt;span class='nx'&gt;width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;780px&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+    &lt;span class='nx'&gt;language&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;zh_cn&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+    &lt;span class='nx'&gt;menubar&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kc'&gt;false&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+    &lt;span class='nx'&gt;plugins&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;[&lt;/span&gt;
+    &lt;span class='s2'&gt;&amp;quot;advlist autolink autosave link image lists charmap print preview hr anchor pagebreak&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+    &lt;span class='s2'&gt;&amp;quot;contextmenu directionality emoticons template textcolor paste fullpage textcolor&amp;quot;&lt;/span&gt;
+    &lt;span class='p'&gt;],&lt;/span&gt;
+    &lt;span class='nx'&gt;toolbar_items_size&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;small&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+    &lt;span class='nx'&gt;toolbar1&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;undo redo | bold italic underline strikethrough forecolor | alignleft aligncenter alignright | bullist blockquote link unlink code preview&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+&lt;span class='p'&gt;});&lt;/span&gt;
+&lt;span class='o'&gt;&amp;lt;&lt;/span&gt;&lt;span class='err'&gt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这样就把tinymce引入进来了，然后在html代码里编写的textarea就会自动转换成tinymce。&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>jekyll+markdown通俗易懂</title>
@@ -36,10 +76,6 @@
    <content type="html">&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早之前的博客*平静的技术*本来是托管在国外的VPS上的，但是访问速度一直也不是很稳定，必定是离中国太远了。后来索性停了博客，换用一些云笔记类的产品。用久了又觉得分享起来不是很方便，没有了开源精神。好吧，早知道github的pages,那把原来的域名转过来，直接做一个静态博客也是不错的！！&lt;/p&gt;&lt;p&gt;前两天在网上看到一句话&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;现在是写博客的人原来越少了，转载博客的人却越来越多了&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;深深的同意此说法！不过希望自己还是能记录下些东西，毕竟一直是个愿意写点东西的性格！！&lt;/p&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='php'&gt;&lt;span class='cp'&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span class='k'&gt;function&lt;/span&gt; &lt;span class='nf'&gt;aaa&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
-&lt;span class='p'&gt;{&lt;/span&gt;
-    &lt;span class='nv'&gt;$a&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;fdfdf&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
-&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;span class='k'&gt;echo&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;I like this work!&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
 &lt;span class='cp'&gt;?&amp;gt;&lt;/span&gt;&lt;span class='x' /&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>

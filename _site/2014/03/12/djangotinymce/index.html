@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>搬来搬去终于来到这里</title>
+    <title>djangotinymce</title>
     <meta name="description" content="">
     <meta name="author" content="抽汗烟的笨笨">
 
@@ -115,21 +115,48 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>搬来搬去终于来到这里 </h1>
+  <h1>djangotinymce </h1>
 </div>
 
 <div class="row-fluid post-full">
   <div class="span12">
     <div class="date">
-      <span>13 February 2014</span>
+      <span>12 March 2014</span>
     </div>
     <div class="content">
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;很早之前的博客*平静的技术*本来是托管在国外的VPS上的，但是访问速度一直也不是很稳定，必定是离中国太远了。后来索性停了博客，换用一些云笔记类的产品。用久了又觉得分享起来不是很方便，没有了开源精神。好吧，早知道github的pages,那把原来的域名转过来，直接做一个静态博客也是不错的！！</p><p>前两天在网上看到一句话</p>
-<p><strong>现在是写博客的人原来越少了，转载博客的人却越来越多了</strong></p>
-<p>深深的同意此说法！不过希望自己还是能记录下些东西，毕竟一直是个愿意写点东西的性格！！</p><div class='highlight'><pre><code class='php'><span class='cp'>&lt;?php</span>
-<span class='k'>echo</span> <span class='s2'>&quot;I like this work!&quot;</span><span class='p'>;</span>
-<span class='cp'>?&gt;</span><span class='x' />
+      <h1 id="djangotinymce">django+tinymce</h1>
+
+<p>给django加一个在线编辑器，暂时先用tinymce来做，因为着急要用一下，所以没花太多时间去看configration,以下就是简单的介绍一下吧！ <br /> &emsp;&emsp;在tinymce<a href="http://www.tinymce.com/index.php">官网</a>下载对应的zip，然后解压。我在django中设置了一个静态文静目录static，然后该目录下建立一个js目录，然后把解压缩的代码扔进去，代码目录是这样</p>
+
+<blockquote>
+<p><em>mysite/static/js/tinymce</em></p>
+</blockquote>
+
+<p>关于静态目录设定，是这样的 <br /></p>
+<div class='highlight'><pre><code class='python'><span class='n'>STATIC_URL</span> <span class='o'>=</span> <span class='s'>&#39;/static/&#39;</span>
+<span class='n'>STATICFILES_DIRS</span> <span class='o'>=</span> <span class='p'>(</span>
+    <span class='n'>os</span><span class='o'>.</span><span class='n'>path</span><span class='o'>.</span><span class='n'>join</span><span class='p'>(</span><span class='n'>BASE_DIR</span><span class='p'>,</span> <span class='s'>&quot;static&quot;</span><span class='p'>),</span>       
+<span class='p'>)</span>
 </code></pre></div>
+<p>然后在模板文件里面引用tinymce就可以</p>
+<div class='highlight'><pre><code class='javascript'><span class='o'>&lt;</span><span class='nx'>script</span> <span class='nx'>type</span><span class='o'>=</span><span class='s2'>&quot;text/javascript&quot;</span> <span class='nx'>src</span><span class='o'>=</span><span class='s2'>&quot;js/tinymce/tinymce.min.js&quot;</span><span class='o'>&gt;&lt;</span><span class='err'>/script&gt;</span>
+<span class='o'>&lt;</span><span class='nx'>script</span> <span class='nx'>type</span><span class='o'>=</span><span class='s2'>&quot;text/javascript&quot;</span><span class='o'>&gt;</span>
+<span class='nx'>tinyMCE</span><span class='p'>.</span><span class='nx'>init</span><span class='p'>({</span>
+    <span class='nx'>mode</span> <span class='o'>:</span> <span class='s2'>&quot;textareas&quot;</span><span class='p'>,</span>
+    <span class='nx'>theme</span> <span class='o'>:</span> <span class='s2'>&quot;modern&quot;</span><span class='p'>,</span>
+    <span class='nx'>width</span><span class='o'>:</span> <span class='s1'>&#39;780px&#39;</span><span class='p'>,</span>
+    <span class='nx'>language</span><span class='o'>:</span> <span class='s1'>&#39;zh_cn&#39;</span><span class='p'>,</span>
+    <span class='nx'>menubar</span><span class='o'>:</span> <span class='kc'>false</span><span class='p'>,</span>
+    <span class='nx'>plugins</span><span class='o'>:</span> <span class='p'>[</span>
+    <span class='s2'>&quot;advlist autolink autosave link image lists charmap print preview hr anchor pagebreak&quot;</span><span class='p'>,</span>
+    <span class='s2'>&quot;contextmenu directionality emoticons template textcolor paste fullpage textcolor&quot;</span>
+    <span class='p'>],</span>
+    <span class='nx'>toolbar_items_size</span><span class='o'>:</span> <span class='s1'>&#39;small&#39;</span><span class='p'>,</span>
+    <span class='nx'>toolbar1</span><span class='o'>:</span> <span class='s2'>&quot;undo redo | bold italic underline strikethrough forecolor | alignleft aligncenter alignright | bullist blockquote link unlink code preview&quot;</span><span class='p'>,</span>
+<span class='p'>});</span>
+<span class='o'>&lt;</span><span class='err'>/script&gt;</span>
+</code></pre></div>
+<p>这样就把tinymce引入进来了，然后在html代码里编写的textarea就会自动转换成tinymce。</p>
     </div>
 
     
@@ -140,11 +167,11 @@
     <div class="pagination">
       <ul>
       
-        <li class="prev disabled"><a>&larr; Previous</a></li>
+        <li class="prev"><a href="/2014/02/13/jekyllmarkdown" title="jekyll+markdown通俗易懂">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/2014/02/13/jekyllmarkdown" title="jekyll+markdown通俗易懂">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a>
       
       </ul>
     </div>
