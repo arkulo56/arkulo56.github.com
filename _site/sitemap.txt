@@ -10,6 +10,7 @@ http://username.github.io/index.html
 http://username.github.io/about.html
 http://username.github.io/sitemap.txt
 
+http://username.github.io/2014/03/13/string
 http://username.github.io/2014/03/12/djangotinymce
 http://username.github.io/2014/03/12/django-pagination
 http://username.github.io/2014/02/13/jekyllmarkdown
