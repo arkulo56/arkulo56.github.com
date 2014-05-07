@@ -11,7 +11,7 @@ tags: []
 
 **关键的问题是：Xn = X(n-1)+X(n+1),Xn就是兔子的对数，ｎ就是第几个月**
 
-{% hignlight python %}
+{% highlight python %}
 def fibonacci(max):
     n = 1
     a,b,c = 0,0,1
