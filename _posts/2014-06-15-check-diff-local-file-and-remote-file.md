@@ -16,7 +16,7 @@ if [ $# -lt 1 ];then
     exit 0
 fi
 
-filename=`ssh heycola@210.14.146.186 ls -R ${path}`
+filename=`ssh 用户名@你的ip ls -R ${path}`
 for name in $filename
 do
     file=`echo ${name} | grep /`
