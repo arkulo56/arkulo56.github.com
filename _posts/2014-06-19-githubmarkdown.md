@@ -7,6 +7,5 @@ tags: []
 ---
 {% include JB/setup %}
 
-###总结一下markdown的语法
-`单行文本：行首加两个tab`
+
 
