@@ -15,7 +15,7 @@ tags: []
 4 很多的struct真的找不到，我也很无奈，例如DrawingWand,具体应该怎么使用，我也暂时没有找到      
 
 >以下是书写的代码：    
-‘’‘c
+```c
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -79,4 +79,4 @@ int main(int argc,char **argv)
 
     return (status == MagickPass ? 0 : 1);
 }
-‘’‘   
+```   
