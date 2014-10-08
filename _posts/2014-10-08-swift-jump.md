@@ -25,6 +25,6 @@ self.navigationController?.popViewController
 ```   
 let myStoryBoard = self.storyboard     
 let loginView:UIViewController = myStoryBoard?.instantiateViewControllerWithIdentifier("login") as UIViewController                   
-//login是视图的storyboard id
+//login是视图的storyboard id    
 self.navigationController?.pushViewController(loginView, animated: true)    
 ```
