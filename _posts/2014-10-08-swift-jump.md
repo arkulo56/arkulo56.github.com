@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "swift版<多多装修>学些坎坷经历之－－几种页面跳转方式"
+title: "swift版<<多多装修>>学习坎坷经历之---几种页面跳转方式"
 description: ""
 category:
 tags: [swfit]
