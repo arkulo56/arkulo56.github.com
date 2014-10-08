@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "swift的几种页面跳转"
+title: "swift版<多多装修>学些坎坷经历之－－几种页面跳转方式"
 description: ""
 category:
 tags: [swfit]
@@ -21,7 +21,8 @@ self.navigationController?.pushViewController
 self.navigationController?.popViewController 
 ```
 
-+ 示例代码   
+示例代码   
+   
 ```   
 let myStoryBoard = self.storyboard     
 let loginView:UIViewController = myStoryBoard?.instantiateViewControllerWithIdentifier("login") as UIViewController                   
