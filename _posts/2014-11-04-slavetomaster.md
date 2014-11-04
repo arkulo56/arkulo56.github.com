@@ -8,7 +8,8 @@ tags: [mysql]
 {% include JB/setup %}  
 
 ##背景   
-数据库的一个master硬件坏了，决定用一个完整的slave顶替这个master，充当一个新的master。此数据库中数据量比较大，在此将过程记录一下。     
+数据库的一个master硬件坏了，决定用一个完整的slave顶替这个master，充当一个新的master。此数据库中数据量比较大，在此将过程记录一下。    
+     
 ##步骤   
 1. 首先决定用多个slave中的哪个做为新的master    
 查看`master_log_file`和`read_master_log_pos`就可以确定哪个slave同步的数据最多，选这个slave就可以了
