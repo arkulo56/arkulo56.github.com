@@ -24,9 +24,9 @@ tags: [mysql]
 ＊ 然后在相应的文件中查找最后执行的语句`mysqlbinlog /var/lib/mysql/mysql-bin.000003 | tail -n20` 看最后执行的语句
 ＊ 在新的master服务器的所有binlog文件中查找这个语句（当然先从最新生成的文件中查）`mysqlbinlog mysql-bin.000001 | grep "INSERT INTO stuff VALUES (NULL, 'shin noon yard him', '2013-04-09 07:00:08')" --context 10`  grep "####" 双引号中部分就是上一步得到的执行语句，最后应该看到类似于 `   BEGIN    /*!*/;    \# at 19085 `   
 那这里的`mysql-bin.000001`和`19085`就是我们要找的文件和pos点     
-4. 设置slave的master属性
-＊ slave stop 先停掉salve
-＊ CHANGE MASTER TO MASTER_HOST='slave_b.example.com', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=19085
+4. 设置slave的master属性    
+＊ slave stop 先停掉salve    
+＊ CHANGE MASTER TO MASTER_HOST='slave_b.example.com', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=19085    
 ＊ start slave启动slave （如果不放心还可以重启一下服务）    
 
 ##比对数据
