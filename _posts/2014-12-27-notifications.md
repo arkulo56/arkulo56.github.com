@@ -43,6 +43,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 
 
 ```
+
     func createAndFireLocalNotificationAfterSeconds(seconds: Int) {
         
         UIApplication.sharedApplication().cancelAllLocalNotifications()
