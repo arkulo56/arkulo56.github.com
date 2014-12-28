@@ -16,25 +16,24 @@ tags: [swift]
 ###第一部分工作
 因为不同的ios版本申请使用代码不同，请注意版本！在AppDelegate.swift文件的   
 
-```
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-```
+
+		func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+
 
 这个函数中加入以下代码：
 
 `ios8`
 
-```
+
         let notificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
         let settings = UIUserNotificationSettings(forTypes: notificationType, categories: nil)
         application.registerUserNotificationSettings(settings)
-```
+
 
 `ios7`
 
-```
-	application.registerForRemoteNotificationTypes(UIRemoteNotificationType.Alert | UIRemoteNotificationType.Badge | UIRemoteNotificationType.Sound)
-```
+		application.registerForRemoteNotificationTypes(UIRemoteNotificationType.Alert | UIRemoteNotificationType.Badge | UIRemoteNotificationType.Sound)
+
 
 当然可以进行版本查询，然后实现if else方式进行多版本兼容，这个很简单，请google。
 
@@ -42,7 +41,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 因为消息提示是不涉及可显示组件，因此在代码(例如：ViewController.swift)任何想实现通知的地方都可以加入，具体的参看该函数：
 
 
-```
+
 
     func createAndFireLocalNotificationAfterSeconds(seconds: Int) {
         
@@ -58,7 +57,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
         
     }
 
-```
+
 
 notification变量是消息主题   
 NSDate是提取当前时间加上seconds秒（就是希望多少秒之后进行提示）    
