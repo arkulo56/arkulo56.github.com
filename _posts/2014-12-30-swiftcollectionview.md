@@ -6,7 +6,7 @@ category:
 tags: [swift]
 ---
 {% include JB/setup %}     
-> 部分翻译文章
+> 请尊重原创，转载请注明
 
 
 ##基本原理部分
