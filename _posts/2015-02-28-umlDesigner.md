@@ -45,6 +45,11 @@ tags: [设计模式]
 * [单例模式](https://github.com/arkulo56/thought/issues/49)
 
 
-####持续更新中～～～～
+**结构型模式：**
+
+* [适配器模式](https://github.com/arkulo56/thought/issues/50)
 
 
+***
+
+***持续更新中～～～***
