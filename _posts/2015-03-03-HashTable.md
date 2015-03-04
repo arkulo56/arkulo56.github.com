@@ -8,6 +8,15 @@ tags: [设计模式]
 {% include JB/setup %}     
 > 请尊重原创，转载请注明
 
+
+
+|head1 head1 head1|head2 head2 head2|head3 head3 head3|head4 head4 head4|
+|---|:---|:---:|---:|
+|row1text1|row1text3|row1text3|row1text4|
+|row2text1|row2text3|row2text3|row2text4|
+
+
+
 php语言内部很多地方使用HashTale来做为保存数据的结构，HashTable也是工作常见和常用的数据结构，下面就来说说它的原理。 
 
 ###基本原理
