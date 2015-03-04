@@ -9,14 +9,6 @@ tags: [设计模式]
 > 请尊重原创，转载请注明
 
 
-| Left-Aligned  | Center Aligned  | Right Aligned |
-| :------------ |:---------------:| -----:|
-| col 3 is      | some wordy text | $1600 |
-| col 2 is      | centered        |   $12 |
-| zebra stripes | are neat        |    $1 |
-
-
-
 php语言内部很多地方使用HashTale来做为保存数据的结构，HashTable也是工作常见和常用的数据结构，下面就来说说它的原理。 
 
 ###基本原理
@@ -26,9 +18,7 @@ php语言内部很多地方使用HashTale来做为保存数据的结构，HashTa
 那我们来构造一个最简单的HashTable，这个表只保存整数，默认它的大小是8位，来看看它的样子
 
 
-位置|0|1|2|3|4|5|6|7
-:--|:--|:--|:--|:--|:--|:--|:--|:--
-数据|
+<img src="https://raw.githubusercontent.com/arkulo56/arkulo56.github.com/master/images/hashtable/1.png" width="300" />
 
 
 ###Hash函数
@@ -47,17 +37,13 @@ php语言内部很多地方使用HashTale来做为保存数据的结构，HashTa
 现在HashTable和Hash函数都准备好了，现在开始就插入数据吧。例如插入一个14，经过Hash函数的计算，返回的key的值应该是7，因此我们讲14这个数放置在编号7的位置上
 
 
-位置|0|1|2|3|4|5|6|7
-:--|:--|:--|:--|:--|:--|:--|:--|:--
-||||||||14
-
+<img src="https://raw.githubusercontent.com/arkulo56/arkulo56.github.com/master/images/hashtable/2.png" width="300" />
 
 相同的，33，82以及191，都会进入到计算好的位置上
 
 
-位置|0|1|2|3|4|5|6|7
-:--|:--|:--|:--|:--|:--|:--|:--|:--
-|191||33|82||||14
+
+<img src="https://raw.githubusercontent.com/arkulo56/arkulo56.github.com/master/images/hashtable/3.png" width="300" />
 
 
 ###冲突
@@ -73,28 +59,22 @@ php语言内部很多地方使用HashTale来做为保存数据的结构，HashTa
 5. 将原来的2保存至4号位
 
 
-位置|0|1|2|3|4|5|6|7
-:--|:--|:--|:--|:--|:--|:--|:--|:--
-|191||33|82|***2***|||14
+
+<img src="https://raw.githubusercontent.com/arkulo56/arkulo56.github.com/master/images/hashtable/4.png" width="300" />
 
 简单的办法总是有缺点的，这样空间会很容易被占满，即使空间够大，保存的数据越多，碰到冲突的几率越大，而且多次计算的可能性也越大。
 
 那我们重新回到插入2之前，来看看下面的方法是不是会好一些
 
 
-位置|0|1|2|3|4|5|6|7
-:--|:--|:--|:--|:--|:--|:--|:--|:--
-|191||33|82||||14
-||||2||||
+<img src="https://raw.githubusercontent.com/arkulo56/arkulo56.github.com/master/images/hashtable/5.png" width="300" />
+
 
 可以将每一个位置看成一个数据列（链表什么的），然后变成类似于二维的一个关系，所有经过Hash函数返回相同key的value，都会顺序进入到这个二维的数据列中。只要系统的内存是够的，我们就可以一直增加数据进去
 
 
-位置|0|1|2|3|4|5|6|7
-:--|:--|:--|:--|:--|:--|:--|:--|:--
-|191||33|82||||14
-||||2||||
-||||18||||
+
+<img src="https://raw.githubusercontent.com/arkulo56/arkulo56.github.com/master/images/hashtable/6.png" width="300" />
 
 这里我可以再插入18，他的位置也是3
 
