@@ -48,6 +48,7 @@ tags: [设计模式]
 **结构型模式：**
 
 * [适配器模式](https://github.com/arkulo56/thought/issues/50)
+* [桥接模式](https://github.com/arkulo56/thought/issues/51)
 
 
 ***
