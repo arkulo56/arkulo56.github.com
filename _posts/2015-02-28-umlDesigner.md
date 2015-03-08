@@ -49,7 +49,10 @@ tags: [设计模式]
 
 * [适配器模式](https://github.com/arkulo56/thought/issues/50)
 * [桥接模式](https://github.com/arkulo56/thought/issues/51)
-
+* [装饰者模式](https://github.com/arkulo56/thought/issues/52)
+* [外观模式](https://github.com/arkulo56/thought/issues/53)
+* [享元模式](https://github.com/arkulo56/thought/issues/54)
+* [代理模式](https://github.com/arkulo56/thought/issues/55)
 
 ***
 
