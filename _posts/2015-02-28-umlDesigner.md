@@ -59,5 +59,6 @@ tags: [设计模式]
 **行为型模式：**
 
 * [命令模式](https://github.com/arkulo56/thought/issues/56)
+* [中介者模式](https://github.com/arkulo56/thought/issues/59)
 
 ***持续更新中～～～***
