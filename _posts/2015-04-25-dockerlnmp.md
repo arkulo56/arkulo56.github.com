@@ -11,6 +11,9 @@ tags: [docker]
 
 新接触docker，肯定会被一层层的概念给搞晕了！也许研究一半就放弃了。这里利用一个简单的例子，让我们先快速的把docker用起来，等熟悉了再去研究那些高端的东西吧！！！
 
+![https://raw.githubusercontent.com/arkulo56/thought/master/fotosay/dockerlnmp.png](https://raw.githubusercontent.com/arkulo56/thought/master/fotosay/dockerlnmp.png)
+
+
 ## 带着问题去学习
 
 `这里默认您已经清楚docker的基础知识，现在处在概念向实践的过度期`
